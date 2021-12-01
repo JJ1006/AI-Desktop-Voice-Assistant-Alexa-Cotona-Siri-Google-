@@ -9,7 +9,6 @@ voice = engine.getProperty('voices')
 # print(voice[1].id)
 engine.setProperty('voice',voice[1].id)
 
-
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
@@ -58,22 +57,37 @@ if __name__ == "__main__":
             print(results)
             speak(results)
 
+        elif 'who is' in query:
+            speak('Searching Wikipedia...')
+            query = query.replace("who is", "")
+            results = wikipedia.summary(query, sentences=2)
+            speak("According to Wikipedia")
+            print(results)
+            speak(results)
+
         elif 'youtube' in query:
+            speak("Opening Youtube...")
+            # query = query.replace("youtube", "")
             webbrowser.open("youtube.com")
 
         elif 'google' in query:
+            speak('Opening Google...')
             webbrowser.open("google.com")
 
         elif 'facebook' in query:
+            speak('Opening Facebook...')
             webbrowser.open("facebook.com")
 
         elif 'instagram' in query:
+            speak('Opening Instagram...')
             webbrowser.open("instagram.com")
 
         elif 'github' in query:
+            speak('Opening Github...')
             webbrowser.open("github.com")
 
         elif 'linkedin' in query:
+            speak('Opening Linkedin...')
             webbrowser.open("linkedin.com")
 
         elif 'music' in query:

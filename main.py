@@ -67,7 +67,7 @@ if __name__ == "__main__":
 
         elif 'youtube' in query:
             speak("Opening Youtube...")
-            # query = query.replace("youtube", "")
+            query = query.replace("youtube", "")
             webbrowser.open("youtube.com")
 
         elif 'google' in query:
